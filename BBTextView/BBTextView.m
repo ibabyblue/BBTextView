@@ -249,10 +249,6 @@ typedef void(^textViewBlock)(DDTextView *textView);
 #pragma mark - UITextView代理方法
 - (void)textViewDidChange:(UITextView *)textView{
     
-    if (self.textViewBlock) {
-        self.textViewBlock((DDTextView *)textView);
-    }
-    
     if (textView.text.length <= [self.promptNumber integerValue]) {
         self.prompt.text = [NSString stringWithFormat:@"%lu",[self.promptNumber integerValue] - textView.text.length];
     }else{
@@ -260,15 +256,15 @@ typedef void(^textViewBlock)(DDTextView *textView);
     }
     
     if (self.promptNumber && self.maxLength) {
-        if (textView.text.length >= [self.promptNumber integerValue]) {
+        if (textView.text.length > [self.promptNumber integerValue]) {
             textView.text = [textView.text substringToIndex:[self.promptNumber integerValue]];
         }
     }else if (self.maxLength){
-        if (textView.text.length >= self.maxLength) {
+        if (textView.text.length > self.maxLength) {
             textView.text = [textView.text substringToIndex:self.maxLength];
         }
     }else if (self.promptNumber){
-        if (textView.text.length >= [self.promptNumber integerValue]) {
+        if (textView.text.length > [self.promptNumber integerValue]) {
             textView.text = [textView.text substringToIndex:[self.promptNumber integerValue]];
         }
     }else{
@@ -283,6 +279,9 @@ typedef void(^textViewBlock)(DDTextView *textView);
         }
     }
     
+    if (self.textViewBlock) {
+        self.textViewBlock((DDTextView *)textView);
+    }
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
