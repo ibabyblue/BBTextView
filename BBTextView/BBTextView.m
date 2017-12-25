@@ -40,6 +40,9 @@ typedef void(^textViewBlock)(DDTextView *textView);
     if (self.style != BBTextViewStyleNormal) {
         self.textView.placeholder.text = placeHolder;
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.textView setNeedsLayout];
+    });
 }
 
 - (void)setPlaceHolderColor:(UIColor *)placeHolderColor{
@@ -76,7 +79,7 @@ typedef void(^textViewBlock)(DDTextView *textView);
     if ([promptNumber integerValue] == self.text.length - 1) {
         self.text ? (self.prompt.text = @"0") : (self.prompt.text = promptNumber);
     }else{
-        self.text ? (self.prompt.text = [NSString stringWithFormat:@"%lu",[promptNumber integerValue] - self.text.length]) : (self.prompt.text = promptNumber);
+        self.text ? (self.prompt.text = [NSString stringWithFormat:@"%lu",(unsigned long)[promptNumber integerValue] - self.text.length]) : (self.prompt.text = promptNumber);
     }
 }
 
