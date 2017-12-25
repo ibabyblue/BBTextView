@@ -40,6 +40,11 @@ typedef void(^textViewBlock)(DDTextView *textView);
     if (self.style != BBTextViewStyleNormal) {
         self.textView.placeholder.text = placeHolder;
     }
+    if ([self.textView.placeholder isHidden]) {
+        if (!self.text) {
+            self.textView.placeholder.hidden = NO;
+        }
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.textView setNeedsLayout];
     });
@@ -55,6 +60,9 @@ typedef void(^textViewBlock)(DDTextView *textView);
     self.textView.text = text;
     if (self.promptNumber) {
         [self setPromptNumber:self.promptNumber];
+    }
+    if (text && ![text isEqualToString:@""]) {
+        self.textView.placeholder.hidden = YES;
     }
 }
 
@@ -253,7 +261,7 @@ typedef void(^textViewBlock)(DDTextView *textView);
 - (void)textViewDidChange:(UITextView *)textView{
     
     if (textView.text.length <= [self.promptNumber integerValue]) {
-        self.prompt.text = [NSString stringWithFormat:@"%lu",[self.promptNumber integerValue] - textView.text.length];
+        self.prompt.text = [NSString stringWithFormat:@"%lu",(unsigned long)[self.promptNumber integerValue] - textView.text.length];
     }else{
         self.prompt.text = @"0";
     }
@@ -320,6 +328,9 @@ typedef void(^textViewBlock)(DDTextView *textView);
         //1.初始化
         [self setupUI];
     }
+    
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
     return self;
 }
 
@@ -327,8 +338,6 @@ typedef void(^textViewBlock)(DDTextView *textView);
  初始化
  */
 - (void)setupUI{
-    
-    self.translatesAutoresizingMaskIntoConstraints = NO;
     
     //1.占位文字
     self.font ? (self.placeholder.font = self.font) : (self.placeholder.font = [UIFont systemFontOfSize:font(12)]);
