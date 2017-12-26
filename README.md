@@ -6,41 +6,39 @@
 
 ## 如何使用：
     1.需求：只需要占位文字
-        1）导入IBBTextView.h头文件。
-        2）
+    1）导入IBBTextView.h头文件。
+    2）
     
-    ```Objective-C
-    
-    IBBTextView *ibb = [[IBBTextView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
-    //设置占位文字
-    ibb.placeholder = @"偶是个占位文字...";
-    //设置占位文字颜色,默认灰色
-    ibb.placeholderColor = [UIColor lightGrayColor];
-    //设置输入最大字符数
-    ibb.maxLength = 10;
-    [self.view addSubview:ibb];
-    
-    ```
+```Objective-C
+IBBTextView *ibb = [[IBBTextView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+//设置占位文字
+ibb.placeholder = @"偶是个占位文字...";
+//设置占位文字颜色,默认灰色
+ibb.placeholderColor = [UIColor lightGrayColor];
+//设置输入最大字符数
+ibb.maxLength = 10;
+[self.view addSubview:ibb];
+```
         
     2.需求：需要占位文字和提示剩余可输入字数
-        1）导入IBBTextView.h头文件。
-        2）
-        
-        ```Objective-C
-        IBBTextView *ibb = [[IBBTextView alloc] initWithPromptNumber:@"100" offsetOfVertical:10 offsetOfHorizon:20 textView:^(IBBTextView * _Nonnull textView) {
+    1）导入IBBTextView.h头文件。
+    2）
+    
+```Objective-C
+IBBTextView *ibb = [[IBBTextView alloc] initWithPromptNumber:@"100" offsetOfVertical:10 offsetOfHorizon:20 textView:^(IBBTextView * _Nonnull textView) {
         NSLog(@"%@",textView);
-        }];
-        ibb.frame = CGRectMake(100, 100, 200, 100);
-        //设置占位文字
-        ibb.placeholder = @"偶是个占位文字...";
-        //设置占位文字颜色,默认灰色
-        ibb.placeholderColor = [UIColor lightGrayColor];
-        //设置提示可输入字数字体大小，默认12
-        ibb.promptNumberFont = [UIFont systemFontOfSize:14];
-        //设置提示可输入字数字体颜色
-        ibb.promptNumberColor = [UIColor grayColor];
-        [self.view addSubview:ibb];
-        ```
+}];
+ibb.frame = CGRectMake(100, 100, 200, 100);
+//设置占位文字
+ibb.placeholder = @"偶是个占位文字...";
+//设置占位文字颜色,默认灰色
+ibb.placeholderColor = [UIColor lightGrayColor];
+//设置提示可输入字数字体大小，默认12
+ibb.promptNumberFont = [UIFont systemFontOfSize:14];
+//设置提示可输入字数字体颜色
+ibb.promptNumberColor = [UIColor grayColor];
+[self.view addSubview:ibb];
+```
 
 ## 注意点：
     1.同时输入提示字数和最大字符数，最大字符数会失效，以提示字数作为最大限制输入字符。
