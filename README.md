@@ -8,7 +8,7 @@
     1.需求：只需要占位文字
         1）导入IBBTextView.h头文件。
         2）
-        ```
+        ```Objective-C
         IBBTextView *ibb = [[IBBTextView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
         //设置占位文字
         ibb.placeholder = @"偶是个占位文字...";
@@ -21,7 +21,7 @@
     2.需求：需要占位文字和提示剩余可输入字数
         1）导入IBBTextView.h头文件。
         2）  
-        ```
+        ```Objective-C
         IBBTextView *ibb = [[IBBTextView alloc] initWithPromptNumber:@"100" offsetOfVertical:10 offsetOfHorizon:20 textView:^(IBBTextView * _Nonnull textView) {
         NSLog(@"%@",textView);
         }];
