@@ -15,7 +15,7 @@
 		4D0686641FE945DF006F5D11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0686631FE945DF006F5D11 /* main.m */; };
 		4D06866E1FE945DF006F5D11 /* BBTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D06866D1FE945DF006F5D11 /* BBTextViewTests.m */; };
 		4D0686791FE945DF006F5D11 /* BBTextViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0686781FE945DF006F5D11 /* BBTextViewUITests.m */; };
-		4D0686881FE945FE006F5D11 /* BBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0686871FE945FE006F5D11 /* BBTextView.m */; };
+		4D2DB89A1FF21C8200B49E3C /* IBBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2DB8991FF21C8200B49E3C /* IBBTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		4D0686741FE945DF006F5D11 /* BBTextViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBTextViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0686781FE945DF006F5D11 /* BBTextViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBTextViewUITests.m; sourceTree = "<group>"; };
 		4D06867A1FE945DF006F5D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D0686861FE945FE006F5D11 /* BBTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBTextView.h; sourceTree = "<group>"; };
-		4D0686871FE945FE006F5D11 /* BBTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBTextView.m; sourceTree = "<group>"; };
+		4D2DB8981FF21C8200B49E3C /* IBBTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBBTextView.h; sourceTree = "<group>"; };
+		4D2DB8991FF21C8200B49E3C /* IBBTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBBTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +108,8 @@
 				4D0686551FE945DF006F5D11 /* AppDelegate.m */,
 				4D0686571FE945DF006F5D11 /* ViewController.h */,
 				4D0686581FE945DF006F5D11 /* ViewController.m */,
-				4D0686861FE945FE006F5D11 /* BBTextView.h */,
-				4D0686871FE945FE006F5D11 /* BBTextView.m */,
+				4D2DB8981FF21C8200B49E3C /* IBBTextView.h */,
+				4D2DB8991FF21C8200B49E3C /* IBBTextView.m */,
 				4D06865A1FE945DF006F5D11 /* Main.storyboard */,
 				4D06865D1FE945DF006F5D11 /* Assets.xcassets */,
 				4D06865F1FE945DF006F5D11 /* LaunchScreen.storyboard */,
@@ -273,7 +273,7 @@
 				4D0686591FE945DF006F5D11 /* ViewController.m in Sources */,
 				4D0686641FE945DF006F5D11 /* main.m in Sources */,
 				4D0686561FE945DF006F5D11 /* AppDelegate.m in Sources */,
-				4D0686881FE945FE006F5D11 /* BBTextView.m in Sources */,
+				4D2DB89A1FF21C8200B49E3C /* IBBTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
